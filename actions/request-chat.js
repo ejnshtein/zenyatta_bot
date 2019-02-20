@@ -87,7 +87,6 @@ composer.hears(/^\/addchat (-?[0-9]+)$/i,
     const { mongo: collection } = ctx
     const chat = await collection('requestchats').findOne({ id: Number(ctx.match[1]) }).exec()
     const chatData = chat.toObject()
-    console.log(chatData)
     delete chatData._id
     try {
       await collection('chats').create(chatData)
