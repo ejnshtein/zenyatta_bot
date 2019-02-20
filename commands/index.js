@@ -1,0 +1,16 @@
+module.exports = app => {
+  require('./about')(app)
+  require('./admins')(app)
+  require('./ask')(app)
+  require('./ban')(app)
+  require('./clear')(app)
+  require('./getid')(app)
+  require('./kappa')(app)
+  require('./lenny')(app)
+  require('./links')(app)
+  require('./mute')(app)
+  require('./rate')(app)
+  require('./start')(app)
+  require('./whattimeisit')(app)
+  require('./whitelist')(app)
+}
