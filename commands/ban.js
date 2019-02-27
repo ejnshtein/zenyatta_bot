@@ -3,7 +3,7 @@ const composer = new Composer()
 const { onlyAdmin, onlyPublic } = require('../middlewares')
 
 composer.hears(
-  ['/ban', '!ban', '!бан', '!spam', '!спам'],
+  [/^\/ban\b(@\S+)?$/ig, '!ban', '!бан', '!spam', '!спам'],
   onlyPublic,
   Composer.branch(
     onlyAdmin,
