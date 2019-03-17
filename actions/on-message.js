@@ -19,6 +19,7 @@ composer.entity(entityAdsDetector, onlyPublic.isPublic, async (ctx, next) => {
       `<a href="tg://user?id=${ctx.from.id}">${ctx.from.first_name} ${ctx.from.last_name ? ctx.from.last_name : ''}</a> нагадил.
 Я конечно прибрался, но лучше подумай что ты натворил 😡`,
       {
+        parse_mode: 'HTML',
         reply_markup: {
           inline_keyboard: [
             [

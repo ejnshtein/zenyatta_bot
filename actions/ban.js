@@ -7,7 +7,7 @@ composer.action(/^ban:user=(\S+)$/i, onlyAdmin, async ctx => {
   try {
     await ctx.telegram.kickChatMember(ctx.chat.id, userId)
   } catch (e) {
-    return ctx.reply(e.description)
+    return ctx.reply(e.message)
   }
   ctx.answerCbQuery('Banned forever.')
   ctx.editMessageText(`We're done here.`)
