@@ -13,7 +13,7 @@ composer.entity(entityAdsDetector, onlyPublic.isPublic, async (ctx, next) => {
     try {
       await ctx.deleteMessage()
     } catch (e) {
-      return ctx.reply(e.description)
+      return ctx.reply(e.message)
     }
     await ctx.reply(
       `<a href="tg://user?id=${ctx.from.id}">${ctx.from.first_name} ${ctx.from.last_name ? ctx.from.last_name : ''}</a> нагадил.
@@ -62,7 +62,7 @@ composer.on('message', onlyPublic.isPublic, async (ctx, next) => {
     try {
       await ctx.deleteMessage()
     } catch (e) {
-      return ctx.reply(e.description)
+      return ctx.reply(e.message)
     }
   } else {
     next()

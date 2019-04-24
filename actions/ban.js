@@ -4,6 +4,7 @@ const { onlyAdmin } = require('../middlewares')
 
 composer.action(/^ban:user=(\S+)$/i, onlyAdmin, async ctx => {
   const userId = ctx.match[2]
+  console.log(userId)
   try {
     await ctx.telegram.kickChatMember(ctx.chat.id, userId)
   } catch (e) {
